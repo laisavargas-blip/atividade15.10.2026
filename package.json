@@ -1,7 +1,8 @@
-{  "scripts": {
-  "dev":"node --watch src/server.js"
-},
-"type": "module",
+{
+  "scripts": {
+    "dev": "node --watch scr/server.js"
+  },
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^18.0.8",

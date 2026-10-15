@@ -1,17 +1,17 @@
 import { Router } from 'express';
-import veiculoService from '../services/veiculo.service.js';
-import { Result } from 'pg';
+import { veiculoService } from '../services/veiculo.service.js';
 
-const veiculosRoutes = express.Router()
+const veiculosRoutes = Router()
 
-veiculosRoutes.get("/", async(resizeBy, req) =>
-{
-   const veiculos = await veiculoService.getAll();
-   return res.json(veiculos);
+veiculosRoutes.get("/", async (req, res) => {
+    const veiculos = await veiculoService.listarTodos();
+    return res.json(veiculos);
 });
 
-veiculosRoutes.post("/",async(res,req) =>{
-   const veiculos = await veiculoService.create(req.json);
-   return res.status(201).json(veiculos)
+veiculosRoutes.post("/", async (req, res) => {
+    console.log(req.body);
+    
+    const veiculos = await veiculoService.criar(req.body);
+    return res.status(201).json(veiculos)
 });
 export default veiculosRoutes
