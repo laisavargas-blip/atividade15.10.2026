@@ -1,11 +1,11 @@
-{  
+{  "scripts": {
+  "dev":"node --watch src/server.js"
+},
+"type": "module",
   "dependencies": {
-    "script":{
-      "dev":"node --watch src/server.js"
-    },
     "cors": "^2.8.6",
     "dotenv": "^18.0.8",
     "express": "^5.3.0",
-    "pg": "^8.23.1"
+    "pg": "^8.23.1", 
   }
 }
